@@ -1,0 +1,75 @@
+.customers {
+  @include sizes(1170px, 372px);
+  margin-left: 185px;
+
+&__name {
+  padding-top: 94px;
+  margin-bottom: 50px;
+  color: $main-text-color;
+  @include font(36px, 700, calc(42 / 36));
+  text-align: center;
+}
+
+&__list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+&__item {
+  @include sizes(170px, 92px);
+  box-sizing: border-box;
+  border: 1px solid $third-text-color;
+  border-radius: 4px;
+
+&:is(:hover, :focus) {
+  cursor: pointer;
+  border-color: $logo-color;
+  @include transition(border, 250ms, cubic-bezier(0.4, 0, 0.2, 1));
+}
+
+&:is(:hover, :focus) .customers__svg {
+  fill: $logo-color;
+  @include transition(fill, 250ms, cubic-bezier(0.4, 0, 0.2, 1));
+
+  animation: tada;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  @include animation(tada, 1.5s, 1);
+}
+}
+
+&__link {
+  display: block;
+}
+
+&__svg {
+  position: relative;
+  fill: $third-text-color;
+}
+
+&__svg--first {
+  @include customers-svg-sizes(46px, 52.7px, 35%, 20%);
+}
+
+&__svg--second{
+  @include customers-svg-sizes(48px, 60px, 35%, 15%);
+}
+
+&__svg--third {
+  @include customers-svg-sizes(43.46px, 41.18px, 37%, 25%);
+}
+
+&__svg--fourth {
+  @include customers-svg-sizes(124.44px, 80.62px, 15%, 10%);
+}
+
+&__svg--fifth {
+  @include customers-svg-sizes(77.54px, 60.43px, 25%, 15%);
+}
+
+&__svg--sixth {
+  @include sizes(153.79px, 103.93px);
+  left: 7%;
+}
+}
