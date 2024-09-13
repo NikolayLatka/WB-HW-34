@@ -34,7 +34,7 @@
         </nav>
         <ul class="header-contact">
           <li class="header-contact__item">
-            <svg class="header-contact__img" width="20px" height="16px">
+            <svg class="header-contact__img header-contact__img--start">
               <use href="./img/sprite.svg#envelope"></use>
             </svg>
             <a class="header-contact__mail header-contact__link" href="mailto:info@devstudio.com"
@@ -42,7 +42,7 @@
             >
           </li>
           <li class="header-contact__item">
-            <svg class="header-contact__img" width="17px" height="16px">
+            <svg class="header-contact__img header-contact__img--end">
               <use href="./img/sprite.svg#smartphone"></use>
             </svg>
             <a class="header-contact__number header-contact__link" href="tel:+380961111111"
@@ -50,6 +50,11 @@
             >
           </li>
         </ul>
+        <div class="header-menu">
+          <svg class="header-menu_svg">
+            <use href="./img/sprite.svg#nav-menu"></use>
+          </svg>
+        </div>
       </div>
     </header>
     <main class="main">
@@ -172,8 +177,8 @@
                   class="team__img"
                   src="./img/product-designer.jpg  "
                   alt="Ігор Дем'яненко Product Designer"
-                  width="270"
-                  height="260"
+                  width="450"
+                  height="460"
                 />
                 <figcaption class="team__caption">
                   Ігор Дем'яненко
@@ -217,8 +222,8 @@
                   class="team__img"
                   src="./img/frontend-developer.jpg"
                   alt="Ольга Рєпіна Frontend Developer"
-                  width="270"
-                  height="260"
+                  width="450"
+                  height="460"
                 />
                 <figcaption class="team__caption">
                   Ольга Рєпіна
@@ -262,8 +267,8 @@
                   class="team__img"
                   src="./img/marketing.jpg"
                   alt="Микола Тарасов Marketing"
-                  width="270"
-                  height="260"
+                  width="450"
+                  height="460"
                 />
                 <figcaption class="team__caption">
                   Микола Тарасов
@@ -307,8 +312,8 @@
                   class="team__img"
                   src="./img/ui-designer.jpg"
                   alt="Михайло Єрмаков UI Designer"
-                  width="270"
-                  height="260"
+                  width="450"
+                  height="460"
                 />
                 <figcaption class="team__caption">
                   Михайло Єрмаков
@@ -351,7 +356,7 @@
       </section>
       <section class="customers">
         <div class="container customers--flex">
-          <h2 class="customers__name">
+          <h2 class="customers__title">
             Постійні клієнти
           </h2>
           <ul class="customers__list">
@@ -462,7 +467,7 @@
         </ul>
        </div>
        <div class="subscribe">
-        <h3 class="subscribe__text">
+        <h3 class="subscribe__title">
           ПІДПИШІТЬСЯ НА РОЗСИЛКУ
         </h3>
         <form class="subscribe__form">
