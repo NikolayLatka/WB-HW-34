@@ -127,7 +127,7 @@ body {
   background-color: #2196f3;
 }
 
-.projects-list__overlay, .footer-social-media__item, .team-social-media__link, .work__img-h3, .hero--flex {
+.projects-list__overlay, .footer-social-media__item, .customers__item, .team-social-media__link, .work__img-h3, .hero--flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -170,9 +170,8 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 528px;
-  height: 581px;
-  padding: 15px;
+  width: 450px;
+  height: 609px;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -183,7 +182,7 @@ body {
   -webkit-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal__btn {
+.modal .modal__btn {
   position: relative;
   left: 475px;
   top: -7px;
@@ -195,16 +194,16 @@ body {
   -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal__btn:is(:hover, :focus) {
+.modal .modal__btn .modal__btn:is(:hover, :focus) {
   fill: #2196f3;
   -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal__close-btn-svg {
+.modal .modal__close-btn-svg {
   width: 13px;
   height: 13px;
 }
-.modal__name {
+.modal .modal__name {
   position: relative;
   top: 2px;
   font-size: 20px;
@@ -214,7 +213,7 @@ body {
   text-align: center;
   margin-bottom: 11px;
 }
-.modal__form {
+.modal .modal__form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -223,7 +222,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.modal__label {
+.modal .modal__label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -235,7 +234,7 @@ body {
   margin-bottom: 10px;
   position: relative;
 }
-.modal__input {
+.modal .modal__input {
   width: 448px;
   min-height: 40px;
   -webkit-box-sizing: border-box;
@@ -244,12 +243,12 @@ body {
   border-radius: 4px;
   padding-left: 42.5px;
 }
-.modal__input:is(:hover, :focus) {
+.modal .modal__input .modal:is(:hover, :focus) {
   border-color: #2196f3;
   -webkit-transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal__input__input:is(:hover, :focus) + .modal__input__svg {
+.modal .modal__input .modal__input:is(:hover, :focus) + .modal__svg {
   fill: #2196f3;
   -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -260,10 +259,10 @@ body {
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
 }
-.modal__input-comment {
+.modal .modal__input-comment {
+  width: 448px;
   height: 120px;
   padding-bottom: 90px;
-  width: 448px;
   min-height: 40px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -273,36 +272,39 @@ body {
   padding-top: 12px;
   margin-bottom: 20px;
 }
-.modal__label-checkbox {
+.modal .modal__label-checkbox {
   margin: 0 auto;
   margin-bottom: 30px;
 }
-.modal__input-checkbox {
+.modal .modal__input-checkbox {
   background: #212121;
 }
-.modal__span {
+.modal .modal__span {
   color: #757575;
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 1%;
   margin-bottom: 4px;
 }
-.modal__span__span:last-child {
+.modal .modal__span .modal__span:last-child {
   color: #757575;
   letter-spacing: 3%;
 }
-.modal__span-link {
+.modal .modal__span-link {
   color: #2196f3;
   text-decoration: underline;
 }
-.modal__svg {
+.modal .modal__svg {
   position: absolute;
   left: 14px;
   top: 54%;
 }
-.modal__finish-btn {
+.modal .modal__finish-btn {
   margin: 0 auto;
   color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.875;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.875;
@@ -438,12 +440,16 @@ body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   font-size: 12px;
   font-weight: 500;
   line-height: 0.8571428571;
+}
+@media screen and (min-width: 768px) {
+  .header-contact {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 @media screen and (min-width: 1200px) {
   .header-contact {
@@ -596,6 +602,7 @@ body {
 @media screen and (min-width: 768px) {
   .information {
     height: 600px;
+    margin: 0;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -629,13 +636,19 @@ body {
   }
 }
 .information__item {
-  width: 354px;
-  height: 224px;
+  -ms-flex-preferred-size: calc((100% - 30px) / 2);
+      flex-basis: calc((100% - 30px) / 2);
+}
+@media screen and (min-width: 768px) {
+  .information__item {
+    -ms-flex-preferred-size: calc((50% - 30px) / 2);
+        flex-basis: calc((50% - 30px) / 2);
+  }
 }
 @media screen and (min-width: 1200px) {
   .information__item {
-    width: 270px;
-    height: 100%;
+    -ms-flex-preferred-size: calc((25% - 30px) / 4);
+        flex-basis: calc((25% - 30px) / 4);
   }
 }
 .information__img-background {
@@ -681,14 +694,19 @@ body {
   }
 }
 .information__title {
+  width: 270px;
   font-weight: 700;
   line-height: 1.1428571429;
   margin-bottom: 10px;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 @media screen and (min-width: 768px) {
   .information__title {
     text-align: start;
+    margin: 0;
+    margin-bottom: 10px;
   }
 }
 .information__subtitle {
@@ -911,9 +929,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 30px;
@@ -925,6 +940,12 @@ body {
           box-sizing: border-box;
   border: 1px solid #757575;
   border-radius: 4px;
+}
+@media screen and (min-width: 768px) {
+  .customers__item {
+    width: 226px;
+    height: 92px;
+  }
 }
 @media screen and (min-width: 1200px) {
   .customers__item {
@@ -948,15 +969,11 @@ body {
           animation-duration: 1.5s;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
-  animation: tada;
-  animation-duration: 1.5s;
-  animation-iteration-count: 1;
 }
 .customers__link {
   display: block;
 }
 .customers__svg {
-  position: relative;
   fill: #757575;
 }
 .customers__svg--first {
@@ -1028,7 +1045,7 @@ body {
 .customers__svg--fourth {
   width: 160.44px;
   height: 116.62px;
-  left: 12%;
+  left: 16%;
   top: -8%;
 }
 @media screen and (min-width: 1200px) {
@@ -1079,7 +1096,7 @@ body {
   .customers__svg--sixth {
     width: 153.79px;
     height: 103.93px;
-    left: 6%;
+    left: 9%;
     top: -5%;
   }
 }

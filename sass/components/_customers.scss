@@ -25,7 +25,7 @@
 
 &__list {
   display: flex;
-  justify-content: center;
+  // justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
 }
@@ -35,6 +35,12 @@
   box-sizing: border-box;
   border: 1px solid $third-text-color;
   border-radius: 4px;
+
+  @extend %flex-center;
+
+  @media screen and (min-width: $tablet) {
+    @include sizes(226px, 92px);
+  }
 
   @media screen and (min-width: $desktop) {
   @include sizes(170px, 92px);
@@ -50,9 +56,6 @@
   fill: $logo-color;
   @include transition(fill, 250ms, cubic-bezier(0.4, 0, 0.2, 1));
 
-  animation: tada;
-  animation-duration: 1.5s;
-  animation-iteration-count: 1;
   @include animation(tada, 1.5s, 1);
 }
 }
@@ -62,7 +65,8 @@
 }
 
 &__svg {
-  position: relative;
+  // position: relative;
+
   fill: $third-text-color;
 }
 
@@ -103,7 +107,7 @@
 }
 
 &__svg--fourth {
-  @include customers-svg-sizes(160.44px, 116.62px, 12%, -8%);
+  @include customers-svg-sizes(160.44px, 116.62px, 16%, -8%);
 
   @media screen and (min-width: $desktop) {
   @include customers-svg-sizes(170.44px, 126.62px, 2%, -17%);
@@ -130,7 +134,7 @@
   }
 
   @media screen and (min-width: $desktop) {
-  @include customers-svg-sizes(153.79px, 103.93px, 6%,-5%);
+  @include customers-svg-sizes(153.79px, 103.93px, 9%,-5%);
   }
 }
 }

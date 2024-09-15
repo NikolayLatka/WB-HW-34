@@ -5,6 +5,7 @@
 
   @media screen and (min-width: $tablet) {
     height: 600px;
+    margin: 0;
   }
 
   @media screen and (min-width: $desktop) {
@@ -27,10 +28,17 @@
 }
 
 &__item {
-  @include sizes(354px, 224px);
+  // @include sizes(450px, 226px);
+  flex-basis: calc((100% - 30px) / 2);
+
+  @media screen and (min-width: $tablet) {
+    // @include sizes(354px, 224px);
+    flex-basis: calc((50% - 30px) / 2);
+  }
 
   @media screen and (min-width: $desktop) {
-    @include sizes(270px, 100%);
+    // @include sizes(270px, 100%);
+    flex-basis: calc((25% - 30px) / 4);
   }
 }
 
@@ -76,13 +84,19 @@
 }
 
 &__title {
+  width: 270px;
   font-weight: 700;
   line-height: calc(16 / 14);
   margin-bottom: 10px;
   text-align: center;
+  // margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 
   @media screen and (min-width: $tablet) {
     text-align: start;
+    margin: 0;
+    margin-bottom: 10px;
   }
 }
 

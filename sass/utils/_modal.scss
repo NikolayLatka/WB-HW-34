@@ -20,47 +20,42 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 528px;
-  height: 581px;
-  padding: 15px;
+  @include sizes(450px, 609px);
+  // @include sizes(528px, 581px);
+  // padding: 15px;
   transform: translate(-50%, -50%);
   border-radius: 4px;
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   background: rgb(255, 255, 255);
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+  @include transition(all, 250ms, cubic-bezier(0.4, 0, 0.2, 1));
 
-
-&__btn {
+.modal__btn {
   position: relative;
   left: 475px;
   top: -7px;
 
-  width: 30px;
-  height: 30px;
+  @include sizes(30px, 30px);
   background: rgb(255, 255, 255);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+   @include transition(fill, 250ms, cubic-bezier(0.4, 0, 0.2, 1));
 
-&:is(:hover, :focus) {
+.modal__btn:is(:hover, :focus) {
   fill: $logo-color;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+  @include transition(fill, 250ms, cubic-bezier(0.4, 0, 0.2, 1));
 }
 }
 
-&__close-btn-svg {
-  width: 13px;
-  height: 13px;
+.modal__close-btn-svg {
+  @include sizes(13px, 13px);
 }
 
-&__name {
+.modal__name {
   position: relative;
   top: 2px;
 
-  font-size: 20px;
-  font-weight: 700;
-  line-height: calc(23 / 20);
+  @include font(20px, 700, calc(23 / 20));
   letter-spacing: 3%;
 
   text-align: center;
@@ -68,12 +63,12 @@
   margin-bottom: 11px;
 }
 
-&__form {
+.modal__form {
   display: flex;
   flex-direction: column;
 }
 
-&__label {
+.modal__label {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -81,7 +76,7 @@
   position: relative;
 }
 
-&__input {
+.modal__input {
   width: 448px;
   min-height: 40px;
 
@@ -91,25 +86,22 @@
 
   padding-left: 42.5px;
 
-  &:is(:hover, :focus) {
+  .modal:is(:hover, :focus) {
   border-color: $logo-color;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+  @include transition(border, 250ms, cubic-bezier(0.4, 0, 0.2, 1));
 }
 
-&__input:is(:hover, :focus) + &__svg {
+.modal__input:is(:hover, :focus) + .modal__svg {
   fill: $logo-color;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+  @include transition(fill, 250ms, cubic-bezier(0.4, 0, 0.2, 1));
 
-  animation: rubberBand;
-  animation-duration: 1.5s;
-  animation-iteration-count: 1;
+  @include animation(rubberBand, 1.5s, 1);
 }
 }
 
-&__input-comment {
-  height: 120px;
+.modal__input-comment {
+  @include sizes(448px, 120px);
   padding-bottom: 90px;
-  width: 448px;
   min-height: 40px;
 
   box-sizing: border-box;
@@ -121,16 +113,16 @@
   margin-bottom: 20px;
 }
 
-&__label-checkbox {
+.modal__label-checkbox {
   margin: 0 auto;
   margin-bottom: 30px;
 }
 
-&__input-checkbox {
+.modal__input-checkbox {
   background: $main-text-color;
 }
 
-&__span {
+.modal__span {
   color: $third-text-color;
 
   font-size: 12px;
@@ -139,24 +131,24 @@
 
   margin-bottom: 4px;
 
-  &__span:last-child {
+  .modal__span:last-child {
   color: $third-text-color;
   letter-spacing: 3%;
 }
 }
 
-&__span-link {
+.modal__span-link {
   color: $logo-color;
   text-decoration: underline;
 }
 
-&__svg {
+.modal__svg {
   position: absolute;
   left: 14px;
   top: 54%;
 }
 
-&__finish-btn {
+.modal__finish-btn {
   margin: 0 auto;
 
   color: $main-background-color;
@@ -164,10 +156,10 @@
   font-size: 16px;
   font-weight: 700;
   line-height: calc(30 / 16);
+  @include font(16px, 700, calc(30 / 16));
   letter-spacing: 6%;
 
-  width: 200px;
-  height: 50px;
+  @include sizes(200px, 50px);
 
   border-radius: 4px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);

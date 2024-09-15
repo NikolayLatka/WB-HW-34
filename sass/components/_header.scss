@@ -129,8 +129,10 @@
   line-height: calc(16 / 14);
   flex-wrap: wrap;
   gap: 10px;
-    display: flex;
     @include font(12px, 500, calc(12 / 14));
+    @media screen and (min-width: $tablet) {
+      display: flex;
+    }
 
   @media screen and (min-width: $desktop) {
     gap: 30px;
@@ -162,9 +164,6 @@
 
 &:first-child {
   margin-left: auto;
-
-  @media screen and (min-width: $desktop) {
-  }
 }
 
 
@@ -205,10 +204,6 @@
 &__link {
   color: $third-text-color;
 }
-
-// &__mail {
-//   margin-right: 30px;
-// }
 }
 
 // Menu
